@@ -1,0 +1,81 @@
+{% extends 'CRUD/base.html' %} {% load static %} {% block container %}
+
+<form method="POST" class="post-form" action="/crud/update/{{employee.id}}">
+  {% csrf_token %}
+  <br />
+  <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+      <h3>Update Details</h3>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Employee Id:</label>
+    <div class="col-sm-4">
+      <input
+        type="text"
+        name="cardid"
+        id="id_cardid"
+        required
+        maxlength="20"
+        value="{{ employee.cardid }}"
+      />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Employee Name:</label>
+    <div class="col-sm-4">
+      <input
+        type="text"
+        name="name"
+        id="id_ename"
+        required
+        maxlength="100"
+        value="{{ employee.name }}"
+      />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Employee Email:</label>
+    <div class="col-sm-4">
+      <input
+        type="email"
+        name="email"
+        id="id_eemail"
+        required
+        maxlength="254"
+        value="{{ employee.email }}"
+      />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Employee Contact:</label>
+    <div class="col-sm-4">
+      <input
+        type="text"
+        name="contact"
+        id="id_econtact"
+        required
+        maxlength="15"
+        value="{{ employee.contact }}"
+      />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+      <button type="submit" class="btn btn-success">Update</button>
+    </div>
+  </div>
+</form>
+{% endblock %}
+
+
+<!-- <tr><th><label for="id_cardid">Cardid:</label></th><td><ul class="errorlist"><li>This field is required.</li></ul><input type="text" name="cardid" maxlength="20" required id="id_cardid"></td></tr>
+
+
+<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="himesh" maxlength="100" required id="id_name"></td></tr>
+
+<tr><th><label for="id_email">Email:</label></th><td><input type="email" name="email" value="himseo17jan@gmail.com" maxlength="254" required id="id_email"></td></tr>
+
+<tr><th><label for="id_contact">Contact:</label></th><td><input type="text" name="contact" value="4567876567" maxlength="15" required id="id_contact"></td></tr> -->

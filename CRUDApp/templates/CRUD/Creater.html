@@ -1,0 +1,33 @@
+{% extends 'CRUD/base.html' %} {% load static %} {% block container %}
+
+<div class="row">
+  <div class="col">{% block table%} {% endblock %}</div>
+  <div class="col-9 text-align-center">
+    <form method="POST" class="post-form" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Employee Id:</label>
+        <div class="col-sm-4">{{ form.cardid }}</div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Employee Name:</label>
+        <div class="col-sm-4">{{ form.name }}</div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Employee Email:</label>
+        <div class="col-sm-4">{{ form.email }}</div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Employee Contact:</label>
+        <div class="col-sm-4">{{ form.contact }}</div>
+      </div>
+      <div class="form-group row">
+        <label class="col-sm-1 col-form-label"></label>
+        <div class="col-sm-4">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
